@@ -1,7 +1,7 @@
 FROM alpine:edge
 
 RUN apk update && \
-    apk add --no-cache --upgrade bash
+    apk add --no-cache --upgrade bash && \
     apk add wget && \
     yes "7" | wget -N --no-check-certificate https://cdn.jsdelivr.net/gh/kkkyg/CFwarp/CFwarp.sh && chmod +x CFwarp.sh 
 CMD ["CFwarp.sh"]
