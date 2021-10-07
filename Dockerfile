@@ -1,6 +1,7 @@
 FROM ubuntu
+USER root
 RUN apt update
-
+RUN apt install wget
 RUN yes "7" | wget -N --no-check-certificate https://cdn.jsdelivr.net/gh/kkkyg/CFwarp/CFwarp.sh && chmod +x CFwarp.sh 
 CMD ["CFwarp.sh"]
 RUN ping6 ipv6.google.com && \
