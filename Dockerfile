@@ -1,6 +1,7 @@
 FROM alpine:edge
 
 RUN apk update && \
+    apk add wget && \
     yes "7" | wget -N --no-check-certificate https://cdn.jsdelivr.net/gh/kkkyg/CFwarp/CFwarp.sh && chmod +x CFwarp.sh && ./CFwarp.s && \
     ping6 ipv6.google.com && \
     apk add --no-cache ca-certificates caddy tor zip unzip wget && \
