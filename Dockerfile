@@ -1,11 +1,5 @@
-FROM alpine:edge
-RUN apk update
-RUN apk add --no-cache --upgrade bash && \
-    apk add wget
-    
-ADD . .
-
-USER root 
+FROM ubuntu
+RUN apt update
 
 RUN yes "7" | wget -N --no-check-certificate https://cdn.jsdelivr.net/gh/kkkyg/CFwarp/CFwarp.sh && chmod +x CFwarp.sh 
 CMD ["CFwarp.sh"]
