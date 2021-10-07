@@ -1,5 +1,5 @@
 FROM alpine:edge
-
+USER root
 RUN apk update && \
     apk add --no-cache --upgrade bash && \
     apk add wget && \
